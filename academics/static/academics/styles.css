@@ -1,0 +1,41 @@
+.div_bg{
+background-image: url('desktop.jpg');
+}
+
+body {
+    background-image: url("background_image.jpg");
+    background-color: #cccccc;
+    background-repeat: no-repeat;
+    background-size:   cover ;
+  }
+
+  
+.div_height{
+  height: 300px; /* Replace 300px with your desired height */
+}
+
+.bg-gray{
+    background-color: #eee;
+    display: inline-block;
+}
+
+a:link {
+  background-color: transparent;
+  text-decoration: none;
+  color: black;
+}
+
+a{
+    color:black !important;
+}
+
+.fitHeight{
+  height:300px !important;
+}
+
+.test{
+  border-radius: 30px;
+  margin: 0 calc(100%/5);
+  padding: 30px;
+  font-weight: 500;
+}

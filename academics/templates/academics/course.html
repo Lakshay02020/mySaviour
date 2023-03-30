@@ -1,0 +1,25 @@
+{% extends 'academics/base.html' %}
+{% block title %} Courses {% endblock title %} 
+
+{% load static %}
+
+{% block body %}
+    <div class="row mt-5 justify-content-center">
+        {% for course in courses %}
+            <div class="card col-6 col-md-4 col-sm-6 m-2" style="width: 18rem;">
+                <img class="img-fluid card-img-top" src = "{% static 'academics/desktop.jpg'%}"  alt="Card image cap">   
+                <div class="position-relative">
+                    <div class="position-absolute top-50 start-50 translate-middle">
+                        <h1>UTA-035</h1>
+                    </div>        
+                </div>
+                 
+                <div class="card-body">
+                <h5 class="card-title"> {{course.name}} </h5>
+                <p class="card-text"> Course Code: {{course.id}} </p>
+                <a href= {% url 'documents' course.id %}  class="btn btn-primary">View Resources</a>
+                </div>
+              </div>
+        {% endfor%}
+    </div>
+{% endblock %}

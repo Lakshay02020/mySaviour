@@ -1,0 +1,30 @@
+{% extends 'academics/base.html' %}
+{% block title %} Documents {% endblock title %} 
+{% block body %}
+        <div class="row">
+            <div class="col-12 m-auto"> 
+                <h1 class = "text-center display-1 ">
+                    <strong class = "mt-3 mb-2"> mySaviour </strong>
+                </h1>
+            </div>
+        </div>
+
+        <table class="table table-hover table-bordered">
+            <thead>
+              <tr>
+                <th scope="col">File Name</th>
+                <th scope="col">Download Link</th>
+              </tr>
+            </thead>
+
+            <tbody>
+                  {% for document in documents %}
+                    <tr>
+                      <td>{{document.name}}</td>
+                      <td><a href = {{document.notes.url}} download target="_blank" > Download </a></td>
+                    </tr>
+                    {% endfor %}
+            </tbody>
+        </table>
+{% endblock %}
+

@@ -1,0 +1,29 @@
+{% extends 'academics/base.html' %}
+{% block tile %} mySaviour {% endblock %}
+{% block body %} 
+
+{% load static %}
+    <div class="row mt-4">
+        <div class="row">
+            <div class="col-12 m-auto"> 
+                <h1 class = "text-center display-1">
+                    <h1 class="test text-center bg-white" style="border-radius: 30px;"> Select your Year </h1>
+                </h1>
+            </div>
+        </div>
+            <div class="row mt-5 justify-content-center">
+                {% for year in years %}
+                        <div class="card  m-2" style="width: 18rem;">
+                            <img class="img-fluid card-img-top mt-2" src = "/media/{{year.image}}"  alt="Card image cap">            
+                            <div class="card-body">
+                                <h5 class="card-title"> {{branch}} </h5>
+                                <p class="card-text"> {{year_number}} year</p>
+                                <a href = {% url 'branch' year.number %} class="col btn btn-primary"> {{year.name}} </a>
+                            </div>
+                        </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+        
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends 'academics/base.html' %}
+{% block title %} Documents {% endblock title %} 
+{% block body %}
+
+        <div class="row">
+                <div class="col-12 m-auto mt-5"> 
+                        <h1 class="test text-center bg-white" style="border-radius: 30px;"> Select Document </h1>
+                </div>
+        </div>
+    
+
+        <div class="row mt-5 justify-content-center">
+                {% for type_ in types %}
+                <div class="card col-md-12 col-sm-6 m-2" style="width: 18rem;">
+                    <img class="img-fluid card-img-top" src = "/media/{{type_.image}}"  alt="Card image cap">            
+                    <div class="card-body">
+                    <h5 class="card-title"> {{type_}} </h5>
+                    <p class="card-text"> {{type_}} year</p>
+                    <a href= {% url 'show_documents' course_id type_.id %} class="btn btn-primary">View Documents</a>
+                    </div>
+                </div>
+                 {% endfor%}
+        </div>
+{% endblock %}

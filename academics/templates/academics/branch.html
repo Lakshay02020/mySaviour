@@ -1,0 +1,26 @@
+{% extends 'academics/base.html' %}
+{% block tile %} {{year_number}} {% endblock %}
+{% block body %}
+
+<div class="row">
+    <div class="col-12 m-auto mt-5"> 
+        <h1 class = "text-center display-1">
+            <h1 class="test text-center bg-white" style="border-radius: 30px;"> Select your branch </h1>
+        </h1>
+    </div>
+</div>
+
+{% load static %}
+    <div class="row mt-5 justify-content-center">
+        {% for branch in branches %}
+            <div class="card col-md-12 col-sm-6 m-2" style="width: 18rem;">
+                <img class="img-fluid card-img-top mt-2" src = "/media/{{branch.image}}"  alt="Card image cap">            
+                <div class="card-body">
+                <h5 class="card-title"> {{branch}} </h5>
+                <p class="card-text"> {{year_number}} year</p>
+                <a href= {% url 'course' year_number branch.id %} class="btn btn-primary">View Courses</a>
+                </div>
+            </div>
+        {% endfor%}
+    </div>
+{% endblock %}
